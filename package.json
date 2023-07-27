@@ -1,7 +1,7 @@
 {
     "name": "ghtivity",
     "version": "0.0.0",
-    "description": "Tool for displaying the activity in GitHub repos in a certain time frame.",
+    "description": "A command-line tool for displaying the activity in GitHub repositories in a certain time frame.",
     "bugs": "https://github.com/tweaselORG/ghtivity/issues",
     "repository": {
         "type": "git",
