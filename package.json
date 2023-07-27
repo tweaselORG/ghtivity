@@ -1,6 +1,6 @@
 {
     "name": "ghtivity",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A command-line tool for displaying the activity in GitHub repositories in a certain time frame.",
     "keywords": [
         "github",
