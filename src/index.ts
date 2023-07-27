@@ -104,7 +104,10 @@ const octokit = new Octokit({ userAgent: 'tweaselORG/ghtivity', auth: argv.token
 
         const params = { owner, repo, since: argv.since, until: argv.until, state: 'all' } as const;
 
-        const issues = argv.issues && (await octokit.rest.issues.listForRepo(params)).data;
+        // The issues endpoint also returns pull requests, and it doesn't seem possible to filter them out in the
+        // request.
+        const issues =
+            argv.issues && (await octokit.rest.issues.listForRepo(params)).data.filter((i) => !i.pull_request);
         const pulls = argv.pulls && (await octokit.rest.pulls.list(params)).data;
         // Unfortunately, there is no way to filter releases by date.
         const releases =
