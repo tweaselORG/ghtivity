@@ -2,6 +2,11 @@
     "name": "ghtivity",
     "version": "0.0.0",
     "description": "A command-line tool for displaying the activity in GitHub repositories in a certain time frame.",
+    "keywords": [
+        "github",
+        "activity",
+        "cli"
+    ],
     "bugs": "https://github.com/tweaselORG/ghtivity/issues",
     "repository": {
         "type": "git",
@@ -13,6 +18,7 @@
     "main": "dist/index.js",
     "source": "src/index.ts",
     "types": "dist/index.d.ts",
+    "bin": "./dist/index.js",
     "files": [
         "/dist"
     ],
@@ -61,5 +67,16 @@
         "parcel": "2.9.3",
         "prettier": "2.8.8",
         "typescript": "5.1.6"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "targets": {
+        "bin": {
+            "source": "src/index.ts",
+            "context": "node",
+            "outputFormat": "esmodule",
+            "optimize": false
+        }
     }
 }
