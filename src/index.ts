@@ -102,7 +102,7 @@ const octokit = new Octokit({ userAgent: 'tweaselORG/ghtivity', auth: argv.token
         const [owner, repo] = r.split('/');
         if (!owner || !repo) throw new Error(`Invalid repository name: ${r}`);
 
-        const params = { owner, repo, since: argv.since, until: argv.until };
+        const params = { owner, repo, since: argv.since, until: argv.until, state: 'all' } as const;
 
         const issues = argv.issues && (await octokit.rest.issues.listForRepo(params)).data;
         const pulls = argv.pulls && (await octokit.rest.pulls.list(params)).data;
